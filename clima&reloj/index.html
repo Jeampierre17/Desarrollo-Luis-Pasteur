@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 268px">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Clima</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+<body>    
+    <div id="contenedor" >
+
+        <div class="caja2">
+            
+            <section id="date" style="font-size: 65px;  position: relative; padding-top: 20%;"></section>  
+        </div>
+         
+        <div id="caja1" >
+            <img id="icono-animado" src="" alt="" height="200" width="200">
+            
+            <!--<h1 id="temperatura-descripcion" ></h1>-->
+        </div>
+        <div class="caja2"> 
+            <h2 id="ubicacion" style="font-size: 35px;"></h2>
+            <h1 id="temperatura-valor" ></h1> 
+            <h1 id="temperatura-humedad" style="font-size: 25px;"></h1>
+            
+            
+        </div>
+        
+
+         
+        
+
+    </div>
+   
+    <script src="app.js"></script>
+    
+
+
+     
+        <script>
+
+showTime();
+function showTime(){
+myDate = new Date();
+hours = myDate.getHours();
+minutes = myDate.getMinutes();
+seconds = myDate.getSeconds();
+if (hours < 10) hours = 0 + hours;
+
+if (minutes < 10) minutes = "0" + minutes;
+
+if (seconds < 10) seconds = "0" + seconds;
+
+$("#date").text(hours+ ":" +minutes);
+setTimeout("showTime()", 1000);
+}
+
+        </script>
+        
+</body>
+</html>
